@@ -21,6 +21,10 @@ namespace _2big_WRS.Controllers
         {
             return View();
         }
+        public ActionResult Terms()
+        {
+            return View();
+        }
         public ActionResult AdminIndex()
         {
             return View();
