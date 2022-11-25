@@ -272,10 +272,7 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
-    <Content Include="Scripts\MyScript\brgyOffPage.js" />
-    <Content Include="Scripts\MyScript\fileComplaint.js" />
     <Content Include="Scripts\MyScript\Index.js" />
-    <Content Include="Scripts\MyScript\residentPage.js" />
     <Content Include="Scripts\popper-utils.js" />
     <Content Include="Scripts\popper-utils.min.js" />
     <Content Include="Scripts\popper.js" />
