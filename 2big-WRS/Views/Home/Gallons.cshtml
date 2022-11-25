@@ -36,6 +36,30 @@
     <link rel="stylesheet" href="https://www.amcharts.com/lib/3/plugins/export/export.css" type="text/css" media="all" />
     <!-- Style.css -->
     <link rel="stylesheet" type="text/css" href="~/assets/css/style.css">
+    <script>
+window.onload = function() {
+
+var chart = new CanvasJS.Chart("chartContainer", {
+  animationEnabled: true,
+  title: {
+    text: "Sales Category Pie Graph - 2022"
+  },
+  data: [{
+    type: "pie",
+    startAngle: 240,
+    yValueFormatString: "00",
+    indexLabel: "{label} {y}",
+    dataPoints: [
+      {y: 20, label: "Container"},
+      {y: 20, label: "Per Bottles"},
+      {y: 70, label: "Accessories"},
+    ]
+  }]
+});
+chart.render();
+
+}
+    </script>
 </head>
 
 <body>
@@ -214,7 +238,7 @@
                                         </a>
                                     </li>
                                     <li class="waves-effect waves-light">
-                                        <a href="/Home/Index">
+                                        <a href="Index.php">
                                             <i class="ti-layout-sidebar-left"></i> Logout
                                         </a>
                                     </li>
@@ -248,23 +272,23 @@
                                 </div> -->
                                 <div class="pcoded-navigation-label" data-i18n="nav.category.navigation">MAIN</div>
                                 <ul class="pcoded-item pcoded-left-item">
-                                    <li>
+                                    <li class="">
                                         <a href="/Home/AdminIndex" class="waves-effect waves-dark">
-                                            <span class="pcoded-micon"><b>D</b></span>
+                                            <span class="pcoded-micon"><i class="ti-home"></i><b>D</b></span>
                                             <span class="pcoded-mtext" data-i18n="nav.dash.main">Dashboard</span>
                                             <span class="pcoded-mcaret"></span>
                                         </a>
                                     </li>
                                     <li>
                                         <a href="/Home/POS" class="waves-effect waves-dark">
-                                            <span class="pcoded-micon"></span>
+                                            <span class="pcoded-micon"><i class="fa fa-dollar"></i></span>
                                             <span class="pcoded-mtext" data-i18n="nav.basic-components.main">Point of Sales</span>
                                             <span class="pcoded-mcaret"></span>
                                         </a>
                                     </li>
-                                    <li>
+                                    <li class="">
                                         <a href="/Home/Reports" class="waves-effect waves-dark">
-                                            <span class="pcoded-micon"></span>
+                                            <span class="pcoded-micon"><i class="ti-stats-up"></i></span>
                                             <span class="pcoded-mtext" data-i18n="nav.basic-components.main">Reports </span>
                                             <span class="pcoded-mcaret"></span>
                                         </a>
@@ -274,36 +298,36 @@
                                 <ul class="pcoded-item pcoded-left-item">
                                     <li>
                                         <a href="/Home/AdminProfile" class="waves-effect waves-dark">
-                                            <span class="pcoded-micon"><b>FC</b></span>
+                                            <span class="pcoded-micon"><i class="fa fa-user"></i><b>FC</b></span>
                                             <span class="pcoded-mtext" data-i18n="nav.form-components.main">Profile </span>
                                             <span class="pcoded-mcaret"></span>
                                         </a>
                                     </li>
                                     <li>
                                         <a href="/Home/Employees" class="waves-effect waves-dark">
-                                            <span class="pcoded-micon"><b>FC</b></span>
+                                            <span class="pcoded-micon"><i class="ti-notepad"></i><b>FC</b></span>
                                             <span class="pcoded-mtext" data-i18n="nav.form-components.main">Employee Records</span>
                                             <span class="pcoded-mcaret"></span>
                                         </a>
                                     </li>
                                     <li>
                                         <a href="/Home/WaterOrders" class="waves-effect waves-dark">
-                                            <span class="pcoded-micon"><b>FC</b></span>
+                                            <span class="pcoded-micon"><i class="ti-package"></i><b>FC</b></span>
                                             <span class="pcoded-mtext" data-i18n="nav.form-components.main">Water Orders </span>
                                             <span class="pcoded-mcaret"></span>
                                         </a>
                                     </li>
-                                    <li class=" pcoded-hasmenu active">
+                                    <li class=" pcoded-hasmenu">
                                         <a href="javascript:void(0)" class="waves-effect waves-dark">
-                                            <span class="pcoded-micon"></span>
+                                            <span class="pcoded-micon"><i class="ti-receipt"></i></span>
                                             <span class="pcoded-mtext" data-i18n="nav.basic-components.main">Deliveries</span>
                                             <span class="pcoded-mcaret"></span>
                                         </a>
-                                        <ul class="pcoded-submenu ">
+                                        <ul class="pcoded-submenu">
                                             <li class=" ">
-                                                <a href="/Home/Gallons" class="waves-effect waves-dark">
+                                                <a href="/Home/DeliveryRecords" class="waves-effect waves-dark">
                                                     <span class="pcoded-micon">
-                                                        <i class="ti-angle-right"></i>
+                                                        <i class="ti-angle-left"></i>
                                                     </span>
                                                     <span class="pcoded-mtext" data-i18n="nav.basic-components.alert">
                                                         Delivery Record
@@ -312,7 +336,8 @@
                                                 </a>
                                             </li>
                                             <li class="">
-                                                <a href="/Home/WaterProduct" class="waves-effect waves-dark">
+                                                <a href="/Home/DeliveryDetails" class="waves-effect waves-dark">
+
                                                     <span class="pcoded-mtext" data-i18n="nav.basic-components.alert">Delivery Details</span>
                                                     <span class="pcoded-mcaret"></span>
                                                 </a>
@@ -321,26 +346,26 @@
                                     </li>
                                     <li>
                                         <a href="/Home/Reservations" class="waves-effect waves-dark">
-                                            <span class="pcoded-micon"><b>FC</b></span>
+                                            <span class="pcoded-micon"><i class="fa fa-book"></i><b>FC</b></span>
                                             <span class="pcoded-mtext" data-i18n="nav.form-components.main">Reservations </span>
                                             <span class="pcoded-mcaret"></span>
                                         </a>
                                     </li>
                                     <li>
                                         <a href="/Home/Station" class="waves-effect waves-dark">
-                                            <span class="pcoded-micon"><b>FC</b></span>
+                                            <span class="pcoded-micon"><i class="ti-map"></i><b>FC</b></span>
                                             <span class="pcoded-mtext" data-i18n="nav.form-components.main">Refilling Station</span>
                                             <span class="pcoded-mcaret"></span>
                                         </a>
                                     </li>
-                                    <li class=" pcoded-hasmenu">
+                                    <li class=" pcoded-hasmenu active pcoded-trigger">
                                         <a href="javascript:void(0)" class="waves-effect waves-dark">
-                                            <span class="pcoded-micon"></span>
+                                            <span class="pcoded-micon"><i class="fa fa-bar-chart-o"></i></span>
                                             <span class="pcoded-mtext" data-i18n="nav.basic-components.main">Products</span>
                                             <span class="pcoded-mcaret"></span>
                                         </a>
-                                        <ul class="pcoded-submenu ">
-                                            <li class=" ">
+                                        <ul class="pcoded-submenu active pcoded-trigger">
+                                            <li class="active ">
                                                 <a href="/Home/Gallons" class="waves-effect waves-dark">
                                                     <span class="pcoded-micon">
                                                         <i class="ti-angle-right"></i>
@@ -359,9 +384,9 @@
                                             </li>
                                         </ul>
                                     </li>
-                                    <li class="pcoded-hasmenu ">
+                                    <li class="pcoded-hasmenu">
                                         <a href="javascript:void(0)" class="waves-effect waves-dark">
-                                            <span class="pcoded-micon"></span>
+                                            <span class="pcoded-micon"><i class="ti-settings"></i></span>
                                             <span class="pcoded-mtext" data-i18n="nav.basic-components.main">Services</span>
                                             <span class="pcoded-mcaret"></span>
                                         </a>
@@ -369,7 +394,7 @@
                                             <li class="">
                                                 <a href="/Home/WaterRefill" class="waves-effect waves-dark">
                                                     <span class="pcoded-micon">
-                                                        <i class="ti-angle-right"></i>
+                                                        <i class="fa fa-bar-chart-o"></i><i class="ti-angle-right"></i>
                                                     </span>
                                                     <span class="pcoded-mtext" data-i18n="nav.basic-components.alert">Water Refill</span>
                                                     <span class="pcoded-mcaret"></span>
@@ -383,21 +408,21 @@
                                 <ul class="pcoded-item pcoded-left-item">
                                     <li>
                                         <a href="/Home/Reviews" class="waves-effect waves-dark">
-                                            <span class="pcoded-micon"><b>FC</b></span>
+                                            <span class="pcoded-micon"><i class="ti-star"></i><b>FC</b></span>
                                             <span class="pcoded-mtext" data-i18n="nav.form-components.main">Reviews</span>
                                             <span class="pcoded-mcaret"></span>
                                         </a>
                                     </li>
                                     <li>
                                         <a href="/Home/ListGraph" class="waves-effect waves-dark">
-                                            <span class="pcoded-micon"><b>FC</b></span>
+                                            <span class="pcoded-micon"><i class="ti-pie-chart"></i><b>FC</b></span>
                                             <span class="pcoded-mtext" data-i18n="nav.form-components.main">Lists and Graph</span>
                                             <span class="pcoded-mcaret"></span>
                                         </a>
                                     </li>
                                     <li>
                                         <a href="/Home/Rewards" class="waves-effect waves-dark">
-                                            <span class="pcoded-micon"><b>FC</b></span>
+                                            <span class="pcoded-micon"><i class="ti-gift"></i><b>FC</b></span>
                                             <span class="pcoded-mtext" data-i18n="nav.form-components.main">Rewards</span>
                                             <span class="pcoded-mcaret"></span>
                                         </a>
@@ -412,7 +437,7 @@
                                 <div class="row align-items-center">
                                     <div class="col-md-8">
                                         <div class="page-header-title">
-                                            <h5 class="m-b-10">DELIVERIES </h5>
+                                            <h5 class="m-b-10">PRODUCT - GALLONS </h5>
                                             <h6 class="m-b-0">2BiG: Water Refilling Station Management System</h6>
                                         </div>
                                     </div>
@@ -431,55 +456,15 @@
                         </div>
                         <!-- Page-header end -->
 
+
+
+
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <!-- Warning Section Starts -->
-    <!-- Older IE warning message -->
-    <!--[if lt IE 10]>
-    <div class="ie-warning">
-        <h1>Warning!!</h1>
-        <p>You are using an outdated version of Internet Explorer, please upgrade <br/>to any of the following web browsers to access this website.</p>
-        <div class="iew-container">
-            <ul class="iew-download">
-                <li>
-                    <a href="http://www.google.com/chrome/">
-                        <img src="assets/images/browser/chrome.png" alt="Chrome">
-                        <div>Chrome</div>
-                    </a>
-                </li>
-                <li>
-                    <a href="https://www.mozilla.org/en-US/firefox/new/">
-                        <img src="assets/images/browser/firefox.png" alt="Firefox">
-                        <div>Firefox</div>
-                    </a>
-                </li>
-                <li>
-                    <a href="http://www.opera.com">
-                        <img src="assets/images/browser/opera.png" alt="Opera">
-                        <div>Opera</div>
-                    </a>
-                </li>
-                <li>
-                    <a href="https://www.apple.com/safari/">
-                        <img src="assets/images/browser/safari.png" alt="Safari">
-                        <div>Safari</div>
-                    </a>
-                </li>
-                <li>
-                    <a href="http://windows.microsoft.com/en-us/internet-explorer/download-ie">
-                        <img src="assets/images/browser/ie.png" alt="">
-                        <div>IE (9 & above)</div>
-                    </a>
-                </li>
-            </ul>
-        </div>
-        <p>Sorry for the inconvenience!</p>
-    </div>
-    <![endif]-->
-    <!-- Warning Section Ends -->
+
     <!-- Required Jquery -->
     <script type="text/javascript" src="~/assets/js/jquery/jquery.min.js"></script>
     <script type="text/javascript" src="~/assets/js/jquery-ui/jquery-ui.min.js "></script>
@@ -513,3 +498,6 @@
 </body>
 
 </html>
+
+
+

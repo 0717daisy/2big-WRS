@@ -1,6 +1,4 @@
-﻿
-
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -38,28 +36,29 @@
     <link rel="stylesheet" href="https://www.amcharts.com/lib/3/plugins/export/export.css" type="text/css" media="all" />
     <!-- Style.css -->
     <link rel="stylesheet" type="text/css" href="~/assets/css/style.css">
+    <script>
+window.onload = function() {
 
-    <script type="text/javascript">
-        $(document).ready(function () {
+var chart = new CanvasJS.Chart("chartContainer", {
+  animationEnabled: true,
+  title: {
+    text: "Sales Category Pie Graph - 2022"
+  },
+  data: [{
+    type: "pie",
+    startAngle: 240,
+    yValueFormatString: "00",
+    indexLabel: "{label} {y}",
+    dataPoints: [
+      {y: 20, label: "Container"},
+      {y: 20, label: "Per Bottles"},
+      {y: 70, label: "Accessories"},
+    ]
+  }]
+});
+chart.render();
 
-
-            var readURL = function (input) {
-                if (input.files && input.files[0]) {
-                    var reader = new FileReader();
-
-                    reader.onload = function (e) {
-                        $('.avatar').attr('src', e.target.result);
-                    }
-
-                    reader.readAsDataURL(input.files[0]);
-                }
-            }
-
-
-            $(".file-upload").on('change', function () {
-                readURL(this);
-            });
-        });
+}
     </script>
 </head>
 
@@ -239,7 +238,7 @@
                                         </a>
                                     </li>
                                     <li class="waves-effect waves-light">
-                                        <a href="/Home/Index">
+                                        <a href="Index.php">
                                             <i class="ti-layout-sidebar-left"></i> Logout
                                         </a>
                                     </li>
@@ -257,10 +256,7 @@
                         <div class="pcoded-inner-navbar main-menu">
                             <div class="">
                                 <div>
-                                    <center>
-                                        <img class="img-fluid" src="~/images/FinalLogo.png" alt="Theme-Logo" style="width:200px">
-                                    </center>
-
+                                    <img class="img-fluid" src="~/images/FinalLogo.png" alt="Theme-Logo" style="width:200px">
                                     <!-- <div class="user-details">
                                         <span id="more-details">Admin 1<i class="fa fa-caret-down"></i></span>
                                     </div> -->
@@ -290,7 +286,7 @@
                                             <span class="pcoded-mcaret"></span>
                                         </a>
                                     </li>
-                                    <li>
+                                    <li class="">
                                         <a href="/Home/Reports" class="waves-effect waves-dark">
                                             <span class="pcoded-micon"><i class="ti-stats-up"></i></span>
                                             <span class="pcoded-mtext" data-i18n="nav.basic-components.main">Reports </span>
@@ -300,7 +296,7 @@
                                 </ul>
                                 <div class="pcoded-navigation-label" data-i18n="nav.category.forms">MANAGEMENT</div>
                                 <ul class="pcoded-item pcoded-left-item">
-                                    <li class="active">
+                                    <li>
                                         <a href="/Home/AdminProfile" class="waves-effect waves-dark">
                                             <span class="pcoded-micon"><i class="fa fa-user"></i><b>FC</b></span>
                                             <span class="pcoded-mtext" data-i18n="nav.form-components.main">Profile </span>
@@ -308,7 +304,7 @@
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="/Home/AdminIndexEmployees" class="waves-effect waves-dark">
+                                        <a href="/Home/Employees" class="waves-effect waves-dark">
                                             <span class="pcoded-micon"><i class="ti-notepad"></i><b>FC</b></span>
                                             <span class="pcoded-mtext" data-i18n="nav.form-components.main">Employee Records</span>
                                             <span class="pcoded-mcaret"></span>
@@ -321,14 +317,14 @@
                                             <span class="pcoded-mcaret"></span>
                                         </a>
                                     </li>
-                                    <li class=" pcoded-hasmenu">
+                                    <li class=" pcoded-hasmenu active pcoded-trigger">
                                         <a href="javascript:void(0)" class="waves-effect waves-dark">
                                             <span class="pcoded-micon"><i class="ti-receipt"></i></span>
                                             <span class="pcoded-mtext" data-i18n="nav.basic-components.main">Deliveries</span>
                                             <span class="pcoded-mcaret"></span>
                                         </a>
-                                        <ul class="pcoded-submenu">
-                                            <li class=" ">
+                                        <ul class="pcoded-submenu active pcoded-trigger">
+                                            <li class=" active">
                                                 <a href="/Home/DeliveryRecords" class="waves-effect waves-dark">
                                                     <span class="pcoded-micon">
                                                         <i class="ti-angle-left"></i>
@@ -441,7 +437,7 @@
                                 <div class="row align-items-center">
                                     <div class="col-md-8">
                                         <div class="page-header-title">
-                                            <h5 class="m-b-10">ADMIN PROFILE </h5>
+                                            <h5 class="m-b-10">DELIVERY RECORDS </h5>
                                             <h6 class="m-b-0">2BiG: Water Refilling Station Management System</h6>
                                         </div>
                                     </div>
@@ -459,203 +455,176 @@
                             </div>
                         </div>
                         <!-- Page-header end -->
-                        <div class="container bootstrap snippet">
-                            <div class="row">
-                                <div class="col-sm-10"><h1>My Profile</h1></div>
-                                <div class="col-sm-2"><img title="profile image" class="img-circle img-responsive" src="~/images/FinalLogo.png" alt="Theme-Logo" style="width:200px"></div>
-                            </div>
-                            <div class="row">
-                                <div class="col-sm-3">
-                                    <!--left col-->
-                                    <div class="text-center">
-                                        <img src="http://ssl.gstatic.com/accounts/ui/avatar_2x.png" class="avatar img-circle img-thumbnail" alt="avatar">
-                                        <h6>Upload photo here...</h6>
-                                        <input type="file" class="text-center center-block file-upload">
-                                    </div>
-                                    </hr><br>
-                                </div><!--/col-3-->
-                                <div class="col-sm-9">
-                                    <ul class="nav nav-tabs">
-                                        <li class="active"><a data-toggle="tab" href="#home">Profile</a></li>
-                                        <li><a data-toggle="tab" href="#about">About</a></li>
-                                        <li><a data-toggle="tab" href="#editprofile">Edit Profile</a></li>
-                                    </ul>
+                        <!-- page content -->
+                        <div class="right_col" role="main">
+                            <div class="">
 
-
-                                    <div class="tab-content">
-                                        <div class="tab-pane active" id="home">
-                                            <hr>
-                                            <form class="form" action="##" method="POST" id="registrationForm">
-                                                <div class="form-group">
-                                                    <div class="col-xs-12">
-                                                        <h4><strong>Firstname: </strong> @*<?php echo $row["first_name"];?>*@</h4>  <br>
-                                                        <h4><strong>Middlename: </strong> @*<?php echo $row["mid_name"];?>*@</h4><br>
-                                                        <h4><strong>Lastname: </strong> @*<?php echo $row["last_name"];?>*@</h4><br>
-                                                        <h4><strong>Contact number: </strong> @*<?php echo $row["contact_num"];?>*@</h4><br>
-                                                        <h4><strong>Email Address: </strong> @*<?php echo $row["email"];?>*@</h4><br>
-                                                        <h4><strong>Address: </strong> @*<?php echo $row["address"];?>*@</h4><br>
-                                                        <h4><strong>Member Since: </strong> @*<?php echo $row["date"];?>*@</h4><br>
+                                <div class="clearfix"><button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target=".add"><i class="fa fa-plus"></i> Add</button></div>
+                                <div class="modal fade add" tabindex="-1" role="dialog" aria-hidden="true">
+                                    <div class="modal-dialog modal-sm">
+                                        <div class="modal-content">
+                                            <form id="demo-form2" data-parsley-validate="" class="form-horizontal form-label-left" novalidate="">
+                                                <div class="modal-header">
+                                                    <h4 class="modal-title" id="myModalLabel2">Add Delivery</h4>
+                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                        <span aria-hidden="true">×</span>
+                                                    </button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <div class="col-md-12 col-sm-12 ">
+                                                        <div class="x_content">
+                                                            <div class="item form-group">
+                                                                <div class="col-md-12 col-sm-12 ">
+                                                                    <input required="required" class="form-control " type="text" placeholder="-             Delivery No          -">
+                                                                </div>
+                                                            </div>
+                                                            <div class="item form-group">
+                                                                <div class="col-md-12 col-sm-12 ">
+                                                                    <input required="required" class="form-control" type="date" placeholder="-                   Date               -">
+                                                                </div>
+                                                            </div>
+                                                            <div class="item form-group">
+                                                                <div class="col-md-12 col-sm-12 ">
+                                                                    <select class="form-control">
+                                                                        <option>Customer</option>
+                                                                        <option>Data</option>
+                                                                        <option>Data</option>
+                                                                    </select>
+                                                                </div>
+                                                            </div>
+                                                            <div class="item form-group">
+                                                                <div class="col-md-12 col-sm-12 ">
+                                                                    <input required="required" class="form-control" type="text" placeholder="-         Vehicle Plate No      -">
+                                                                </div>
+                                                            </div>
+                                                        </div>
                                                     </div>
                                                 </div>
-                                                <div class="form-group">
-                                                    <div class="col-xs-12">
-                                                        <br>
-                                                        <button class="btn btn-lg btn-outline-danger pull-right" style=" color: #FA8072; border-color: #FA8072 " type="close"><a href="dashboard.php"><i class="glyphicon glyphicon-backward"></i>Exit  </a> </button>
-                                                    </div>
-                                                </div>
-                                            </form>
-
-                                            <hr>
-
-                                        </div><!--/tab-pane-->
-                                        <div class="tab-pane" id="about">
-
-                                            <h2></h2>
-
-                                            <hr>
-                                            <form class="form" action="##" method="post" id="registrationForm">
-                                                <div class="form-group">
-                                                    <div class="col-xs-12">
-                                                        <h4><strong>Firstname: </strong> @*<?php echo $row["first_name"];?>*@</h4>  <br>
-                                                        <h4><strong>Middlename: </strong> @*<?php echo $row["mid_name"];?>*@</h4><br>
-                                                        <h4><strong>Lastname: </strong> @*<?php echo $row["last_name"];?>*@</h4><br>
-                                                        <h4><strong>Contact number: </strong> @*<?php echo $row["contact_num"];?>*@</h4><br>
-                                                        <h4><strong>Email Address: </strong> @*<?php echo $row["email"];?>*@</h4><br>
-                                                        <h4><strong>Address: </strong> @*<?php echo $row["address"];?>*@</h4><br>
-                                                        <h4><strong>Member Since: </strong> @*<?php echo $row["date"];?>*@</h4><br>
-                                                    </div>
-                                                </div>
-                                                <div class="form-group">
-                                                    <div class="col-xs-12">
-                                                        <br>
-                                                        <button class="btn btn-lg btn-outline-danger pull-right" style=" color: #FA8072; border-color: #FA8072 " type="close"><a href="dashboard.php"><i class="glyphicon glyphicon-backward"></i>Exit  </a> </button>
-                                                    </div>
-                                                </div>
-                                            </form>
-
-
-                                        </div><!--/tab-pane-->
-                                        <div class="tab-pane" id="editprofile">
-
-
-                                            <hr>
-                                            <form class="form" action="##" method="post" id="registrationForm">
-                                                <div class="form-group">
-                                                    <div class="col-xs-6">
-                                                        <label for="firstname"><h4>First name</h4></label>
-                                                        <input type="text" class="form-control" name="first_name" id="firstname" placeholder="first name" title="enter your first name if any.">
-                                                    </div>
-                                                </div>
-                                                <div class="form-group">
-                                                    <div class="col-xs-6">
-                                                        <label for="lastname"><h4>Last name</h4></label>
-                                                        <input type="text" class="form-control" name="last_name" id="lastname" placeholder="last name" title="enter your last name if any.">
-                                                    </div>
-                                                </div>
-                                                <div class="form-group">
-                                                    <div class="col-xs-6">
-                                                        <label for="mid_name"><h4>Middle Name (Optional)</h4></label>
-                                                        <input type="text" class="form-control" name="mid_name" id="mid_name" placeholder="enter middle name " title="enter your middle name if any.">
-                                                    </div>
-                                                </div>
-
-                                                <div class="form-group">
-                                                    <div class="col-xs-6">
-                                                        <label for="contactno"><h4>Mobile</h4></label>
-                                                        <input type="number" class="form-control" name="contact_num" id="contactno" placeholder="enter mobile number" title="enter your mobile number if any.">
-                                                    </div>
-                                                </div>
-                                                <div class="form-group">
-
-                                                    <div class="col-xs-6">
-                                                        <label for="email"><h4>Email</h4></label>
-                                                        <input type="email" class="form-control" name="email" id="email" placeholder="you@email.com" title="enter your email.">
-                                                    </div>
-                                                </div>
-                                                <div class="form-group">
-                                                    <div class="col-xs-6">
-                                                        <label for="address"><h4>Address</h4></label>
-                                                        <input type="address" class="form-control" id="address" placeholder="enter address" title="enter your address">
-                                                    </div>
-                                                </div>
-                                                <div class="form-group">
-
-                                                    <div class="col-xs-6">
-                                                        <label for="password"><h4>Password</h4></label>
-                                                        <input type="password" class="form-control" name="password" id="password" placeholder="password" title="enter your password.">
-                                                    </div>
-                                                </div>
-                                                <div class="form-group">
-                                                    <div class="col-xs-6">
-                                                        <label for="password2"><h4>Verify</h4></label>
-                                                        <input type="password" class="form-control" name="con_pass" id="password2" placeholder="password2" title="enter your password2.">
-                                                    </div>
-                                                </div>
-                                                <div class="form-group">
-                                                    <div class="col-xs-12">
-                                                        <br>
-                                                        <input type="submit" name="update" value="Update Profile">
-                                                        <!-- <button class="btn btn-lg btn-success pull-left" type="submit" name="update"><i class="glyphicon glyphicon-ok-sign"></i> Update Profile</button>-->
-                                                        <button class="btn btn-lg btn-outline-danger pull-right" style=" color: #FA8072; border-color: #FA8072 " type="close"><a href="dashboard.php"><i class="glyphicon glyphicon-backward"></i>Exit  </a> </button>
-                                                        <!--<button class="btn btn-lg" type="reset"><i class="glyphicon glyphicon-repeat"></i> Reset</button>-->
-                                                    </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-danger btn-sm" data-dismiss="modal" style="margin-right: 46%"><i class="fa fa-times"></i>Close</button>
+                                                    <button type="submit" class="btn btn-primary btn-sm"><i class="fa fa-check"></i>Save</button>
                                                 </div>
                                             </form>
                                         </div>
-                                    </div><!--/tab-pane-->
-                                </div><!--/tab-content-->
-                            </div><!--/col-9-->
-                        </div><!--/row-->
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-md-12 col-sm-12 ">
+                                        <div class="x_panel">
+                                            <div class="x_title">
+                                                <h2>Delivery Record <small>Table</small></h2>
+                                                <div class="clearfix"></div>
+                                            </div>
+                                            <div class="x_content">
+                                                <div class="row">
+                                                    <div class="col-sm-12">
+                                                        <div class="card-box table-responsive">
+                                                            <table id="datatable" class="table table-striped table-bordered" style="width:100%">
+                                                                <thead>
+                                                                    <tr>
+                                                                        <th style="width:15%">Delivery No.</th>
+                                                                        <th>Date Delivered</th>
+                                                                        <th>Customer</th>
+                                                                        <th>Vehicle Plate No</th>
+                                                                        <th>Date Recorded</th>
+                                                                        <th style="width:10%"></th>
+                                                                    </tr>
+                                                                </thead>
+                                                                <tbody>
+                                                                    <tr>
+                                                                        <td>1000002</td>
+                                                                        <td>September 12, 2022</td>
+                                                                        <td>Rosemarie Derder</td>
+                                                                        <td>TFR-12-44</td>
+                                                                        <td>October 15, 2022</td>
+                                                                        <td align="center"><button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target=".edit"><i class="fa fa-edit"></i></button> <button type="button" class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></button></td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>1000001</td>
+                                                                        <td>September 12, 2022</td>
+                                                                        <td>Christian Dicdican</td>
+                                                                        <td>TFR-12-44</td>
+                                                                        <td>December 15, 2022</td>
+                                                                        <td align="center"><button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target=".edit"><i class="fa fa-edit"></i></button> <button type="button" class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></button></td>
+                                                                    </tr>
+                                                                </tbody>
+                                                                <tbody>
+                                                                    <tr>
+                                                                        <th style="width:15%">Delivery No.</th>
+                                                                        <th>Date Delivered</th>
+                                                                        <th>Customer</th>
+                                                                        <th>Vehicle Plate No</th>
+                                                                        <th>Date Recorded</th>
+                                                                        <th style="width:10%"></th>
+                                                                    </tr>
+                                                                </tbody>
+                                                            </table>
+                                                            <div class="modal fade edit" tabindex="-1" role="dialog" aria-hidden="true">
+                                                                <div class="modal-dialog modal-sm">
+                                                                    <div class="modal-content">
+                                                                        <form id="demo-form2" data-parsley-validate="" class="form-horizontal form-label-left" novalidate="">
+                                                                            <div class="modal-header">
+                                                                                <h4 class="modal-title" id="myModalLabel2">Edit Delivery</h4>
+                                                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                                                    <span aria-hidden="true">×</span>
+                                                                                </button>
+                                                                            </div>
+                                                                            <div class="modal-body">
+                                                                                <div class="col-md-12 col-sm-12 ">
+                                                                                    <div class="x_content">
+                                                                                        <div class="item form-group">
+                                                                                            <div class="col-md-12 col-sm-12 ">
+                                                                                                <input required="required" class="form-control " type="text" placeholder="-             Delivery No          -">
+                                                                                            </div>
+                                                                                        </div>
+                                                                                        <div class="item form-group">
+                                                                                            <div class="col-md-12 col-sm-12 ">
+                                                                                                <input required="required" class="form-control" type="date" placeholder="-                   Date               -">
+                                                                                            </div>
+                                                                                        </div>
+                                                                                        <div class="item form-group">
+                                                                                            <div class="col-md-12 col-sm-12 ">
+                                                                                                <input required="required" class="form-control" type="text" placeholder="-               Customer           -">
+                                                                                            </div>
+                                                                                        </div>
+                                                                                        <div class="item form-group">
+                                                                                            <div class="col-md-12 col-sm-12 ">
+                                                                                                <input required="required" class="form-control" type="text" placeholder="-         Vehicle Plate No      -">
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="modal-footer">
+                                                                                <button type="button" class="btn btn-danger btn-sm" data-dismiss="modal" style="margin-right: 46%"><i class="fa fa-times"></i>Close</button>
+                                                                                <button type="submit" class="btn btn-primary btn-sm"><i class="fa fa-check"></i>Save</button>
+                                                                            </div>
+                                                                        </form>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <!-- /page content -->
+
 
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <!-- Warning Section Starts -->
-    <!-- Older IE warning message -->
-    <!--[if lt IE 10]>
-    <div class="ie-warning">
-        <h1>Warning!!</h1>
-        <p>You are using an outdated version of Internet Explorer, please upgrade <br/>to any of the following web browsers to access this website.</p>
-        <div class="iew-container">
-            <ul class="iew-download">
-                <li>
-                    <a href="http://www.google.com/chrome/">
-                        <img src="assets/images/browser/chrome.png" alt="Chrome">
-                        <div>Chrome</div>
-                    </a>
-                </li>
-                <li>
-                    <a href="https://www.mozilla.org/en-US/firefox/new/">
-                        <img src="assets/images/browser/firefox.png" alt="Firefox">
-                        <div>Firefox</div>
-                    </a>
-                </li>
-                <li>
-                    <a href="http://www.opera.com">
-                        <img src="assets/images/browser/opera.png" alt="Opera">
-                        <div>Opera</div>
-                    </a>
-                </li>
-                <li>
-                    <a href="https://www.apple.com/safari/">
-                        <img src="assets/images/browser/safari.png" alt="Safari">
-                        <div>Safari</div>
-                    </a>
-                </li>
-                <li>
-                    <a href="http://windows.microsoft.com/en-us/internet-explorer/download-ie">
-                        <img src="assets/images/browser/ie.png" alt="">
-                        <div>IE (9 & above)</div>
-                    </a>
-                </li>
-            </ul>
-        </div>
-        <p>Sorry for the inconvenience!</p>
-    </div>
-    <![endif]-->
-    <!-- Warning Section Ends -->
+
     <!-- Required Jquery -->
     <script type="text/javascript" src="~/assets/js/jquery/jquery.min.js"></script>
     <script type="text/javascript" src="~/assets/js/jquery-ui/jquery-ui.min.js "></script>
@@ -689,3 +658,6 @@
 </body>
 
 </html>
+
+
+
