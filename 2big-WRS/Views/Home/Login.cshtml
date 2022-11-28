@@ -114,7 +114,7 @@
                                         <div class="row">
                                             @*email*@
                                             <div class="col">
-                                                <div class="form-group-sm">
+                                                <div class="">
                                                     <label>Email</label>
                                                     <div class="input-group">
                                                         <input id="txtemail" type="email" class="form-control" />
@@ -158,6 +158,7 @@
                                                 this.classList.toggle('fa-eye-slash');
                                             });
                                         </script>
+
                                         <div class="d-flex justify-content-center">
                                             <button id="btnLogin" class="btn" style="background: linear-gradient(to right, #5bc0de, #9dd9eb);">Login</button>
                                         </div>
@@ -238,7 +239,7 @@
                                         <div class="form-group">
                                             <label>Password</label>
                                             <div class="input-group-sm">
-                                                <input id="id_password" type="password" class="form-control" />
+                                                <input id="id_passwordreg" type="password" class="form-control" />
                                             </div>
                                         </div>
                                     </div>
@@ -249,7 +250,7 @@
                                     <div class="col-md-12">
                                         <div class="checkbox-fade fade-in-primary">
                                             <label>
-                                                <input type="checkbox" value="" id="togglePassword">
+                                                <input type="checkbox" value="" id="togglePasswordreg">
                                                 <span class="cr"><i class="cr-icon icofont icofont-ui-check txt-primary"></i></span>
                                                 <span class="text-inverse">Show Password</span>
                                             </label>
@@ -258,13 +259,13 @@
                                 </div>
                                 @*Show Password script*@
                                 <script>
-                                    const togglePassword = document.querySelector('#togglePassword');
-                                    const password = document.querySelector('#id_password');
+                                    const toggleregPassword = document.querySelector('#togglePasswordreg');
+                                    const regpassword = document.querySelector('#id_passwordreg');
 
-                                    togglePassword.addEventListener('click', function (e) {
+                                    toggleregPassword.addEventListener('click', function (e) {
                                         // toggle the type attribute
-                                        const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
-                                        password.setAttribute('type', type);
+                                        const type = regpassword.getAttribute('type') === 'password' ? 'text' : 'password';
+                                        regpassword.setAttribute('type', type);
                                         // toggle the eye slash icon
                                         this.classList.toggle('fa-eye-slash');
                                     });
@@ -292,11 +293,12 @@
                                         @*buttons*@
                                         <div class="d-flex justify-content-center">
                                             <button id="btnCreateAcc" class="btn" style="background: linear-gradient(to right, #5bc0de, #9dd9eb);">
-                                                <a href="/Admin/AdminIndex.PHP"></a>
+                                           
                                                 Sign up
                                             </button>
                                         </div>
-                                        <p> <br />
+                                        <p>
+                                            <br />
                                             <a href="/Home/Login" style="font-size:16px;"> Already have an account? Login now.</a>
                                         </p>
                                     </div>
