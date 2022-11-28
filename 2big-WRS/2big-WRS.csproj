@@ -220,6 +220,7 @@
     <Content Include="assets\pages\widget\amchart\serial.js" />
     <Content Include="assets\pages\widget\amchart\serial.min.js" />
     <Content Include="assets\pages\widget\excanvas.js" />
+    <Content Include="Content\Site.css" />
     <Content Include="Global.asax" />
     <Content Include="images\2bigLogo.png" />
     <Content Include="images\2big_logo.png" />
@@ -436,6 +437,7 @@
     <Content Include="Views\Home\Reviews.cshtml" />
     <Content Include="Views\Home\Rewards.cshtml" />
     <Content Include="Views\Home\WaterProduct.cshtml" />
+    <Content Include="Views\Home\Subscribe.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

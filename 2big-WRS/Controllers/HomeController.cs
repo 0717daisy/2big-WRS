@@ -89,5 +89,9 @@ namespace _2big_WRS.Controllers
         {
             return View();
         }
+        public ActionResult Subscribe()
+        {
+            return View();
+        }
     }
 }

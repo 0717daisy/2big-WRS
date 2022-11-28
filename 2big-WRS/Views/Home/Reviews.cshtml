@@ -258,18 +258,18 @@ chart.render();
                                 <div>
                                     <img class="img-fluid" src="~/images/FinalLogo.png" alt="Theme-Logo" style="width:200px">
                                     <!-- <div class="user-details">
-                                        <span id="more-details">Admin 1<i class="fa fa-caret-down"></i></span>
-                                    </div> -->
+                            <span id="more-details">Admin 1<i class="fa fa-caret-down"></i></span>
+                        </div> -->
                                 </div>
                                 <!-- <div class="p-15 p-b-0">
-                                    <form class="form-material">
-                                        <div class="form-group form-primary">
-                                            <input type="text" name="footer-email" class="form-control" required="">
-                                            <span class="form-bar"></span>
-                                            <label class="float-label"><i class="fa fa-search m-r-10"></i>Search Friend</label>
-                                        </div>
-                                    </form>
-                                </div> -->
+                        <form class="form-material">
+                            <div class="form-group form-primary">
+                                <input type="text" name="footer-email" class="form-control" required="">
+                                <span class="form-bar"></span>
+                                <label class="float-label"><i class="fa fa-search m-r-10"></i>Search Friend</label>
+                            </div>
+                        </form>
+                    </div> -->
                                 <div class="pcoded-navigation-label" data-i18n="nav.category.navigation">MAIN</div>
                                 <ul class="pcoded-item pcoded-left-item">
                                     <li class="">
@@ -455,84 +455,91 @@ chart.render();
                             </div>
                         </div>
                         <!-- Page-header end -->
-                        <div class="container">
-                            <h1 class="mt-5 mb-5">Review & Rating </h1>
-                            <div class="card">
-                                <div class="card-header">2BiG's Customers</div>
-                                <div class="card-body">
-                                    <div class="row">
-                                        <div class="col-sm-4 text-center">
-                                            <h1 class="text-warning mt-4 mb-4">
-                                                <b><span id="average_rating">0.0</span> / 5</b>
-                                            </h1>
-                                            <div class="mb-3">
-                                                <i class="fas fa-star star-light mr-1 main_star"></i>
-                                                <i class="fas fa-star star-light mr-1 main_star"></i>
-                                                <i class="fas fa-star star-light mr-1 main_star"></i>
-                                                <i class="fas fa-star star-light mr-1 main_star"></i>
-                                                <i class="fas fa-star star-light mr-1 main_star"></i>
+                        <!-- Page-header end -->
+                        <div class="pcoded-inner-content">
+                            <!-- Main-body start -->
+                            <div class="main-body">
+                                <div class="page-wrapper">
+                                    <!-- Page-body start -->
+                                    <div class="container">
+                                        <h1 class="mt-5 mb-5">Review & Rating </h1>
+                                        <div class="card">
+                                            <div class="card-header">2BiG's Customers</div>
+                                            <div class="card-body">
+                                                <div class="row">
+                                                    <div class="col-sm-4 text-center">
+                                                        <h1 class="text-warning mt-4 mb-4">
+                                                            <b><span id="average_rating">0.0</span> / 5</b>
+                                                        </h1>
+                                                        <div class="mb-3">
+                                                            <i class="fas fa-star star-light mr-1 main_star"></i>
+                                                            <i class="fas fa-star star-light mr-1 main_star"></i>
+                                                            <i class="fas fa-star star-light mr-1 main_star"></i>
+                                                            <i class="fas fa-star star-light mr-1 main_star"></i>
+                                                            <i class="fas fa-star star-light mr-1 main_star"></i>
+                                                        </div>
+                                                        <h3><span id="total_review">0</span> Review</h3>
+                                                    </div>
+                                                    <div class="col-sm-4">
+                                                        <p>
+                                                            <div class="progress-label-left"><b>5</b> <i class="fas fa-star text-warning"></i></div>
+
+                                                            <div class="progress-label-right">(<span id="total_five_star_review">0</span>)</div>
+                                                            <div class="progress">
+                                                                <div class="progress-bar bg-warning" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" id="five_star_progress"></div>
+                                                            </div>
+                                                        </p>
+                                                        <p>
+                                                            <div class="progress-label-left"><b>4</b> <i class="fas fa-star text-warning"></i></div>
+
+                                                            <div class="progress-label-right">(<span id="total_four_star_review">0</span>)</div>
+                                                            <div class="progress">
+                                                                <div class="progress-bar bg-warning" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" id="four_star_progress"></div>
+                                                            </div>
+                                                        </p>
+                                                        <p>
+                                                            <div class="progress-label-left"><b>3</b> <i class="fas fa-star text-warning"></i></div>
+
+                                                            <div class="progress-label-right">(<span id="total_three_star_review">0</span>)</div>
+                                                            <div class="progress">
+                                                                <div class="progress-bar bg-warning" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" id="three_star_progress"></div>
+                                                            </div>
+                                                        </p>
+                                                        <p>
+                                                            <div class="progress-label-left"><b>2</b> <i class="fas fa-star text-warning"></i></div>
+
+                                                            <div class="progress-label-right">(<span id="total_two_star_review">0</span>)</div>
+                                                            <div class="progress">
+                                                                <div class="progress-bar bg-warning" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" id="two_star_progress"></div>
+                                                            </div>
+                                                        </p>
+                                                        <p>
+                                                            <div class="progress-label-left"><b>1</b> <i class="fas fa-star text-warning"></i></div>
+
+                                                            <div class="progress-label-right">(<span id="total_one_star_review">0</span>)</div>
+                                                            <div class="progress">
+                                                                <div class="progress-bar bg-warning" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" id="one_star_progress"></div>
+                                                            </div>
+                                                        </p>
+                                                    </div>
+
+                                                </div>
                                             </div>
-                                            <h3><span id="total_review">0</span> Review</h3>
                                         </div>
-                                        <div class="col-sm-4">
-                                            <p>
-                                                <div class="progress-label-left"><b>5</b> <i class="fas fa-star text-warning"></i></div>
-
-                                                <div class="progress-label-right">(<span id="total_five_star_review">0</span>)</div>
-                                                <div class="progress">
-                                                    <div class="progress-bar bg-warning" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" id="five_star_progress"></div>
-                                                </div>
-                                            </p>
-                                            <p>
-                                                <div class="progress-label-left"><b>4</b> <i class="fas fa-star text-warning"></i></div>
-
-                                                <div class="progress-label-right">(<span id="total_four_star_review">0</span>)</div>
-                                                <div class="progress">
-                                                    <div class="progress-bar bg-warning" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" id="four_star_progress"></div>
-                                                </div>
-                                            </p>
-                                            <p>
-                                                <div class="progress-label-left"><b>3</b> <i class="fas fa-star text-warning"></i></div>
-
-                                                <div class="progress-label-right">(<span id="total_three_star_review">0</span>)</div>
-                                                <div class="progress">
-                                                    <div class="progress-bar bg-warning" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" id="three_star_progress"></div>
-                                                </div>
-                                            </p>
-                                            <p>
-                                                <div class="progress-label-left"><b>2</b> <i class="fas fa-star text-warning"></i></div>
-
-                                                <div class="progress-label-right">(<span id="total_two_star_review">0</span>)</div>
-                                                <div class="progress">
-                                                    <div class="progress-bar bg-warning" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" id="two_star_progress"></div>
-                                                </div>
-                                            </p>
-                                            <p>
-                                                <div class="progress-label-left"><b>1</b> <i class="fas fa-star text-warning"></i></div>
-
-                                                <div class="progress-label-right">(<span id="total_one_star_review">0</span>)</div>
-                                                <div class="progress">
-                                                    <div class="progress-bar bg-warning" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" id="one_star_progress"></div>
-                                                </div>
-                                            </p>
-                                        </div>
-                                        <div class="col-sm-4 text-center">
-                                            <h3 class="mt-4 mb-3">Write Review Here</h3>
-                                            <button type="button" name="add_review" id="add_review" class="btn btn-primary">Review</button>
-                                        </div>
+                                        <div class="mt-5" id="review_content"></div>
                                     </div>
+
+
+
                                 </div>
                             </div>
-                            <div class="mt-5" id="review_content"></div>
                         </div>
-
-
-
                     </div>
                 </div>
             </div>
         </div>
     </div>
+
 
     <!-- Required Jquery -->
     <script type="text/javascript" src="~/assets/js/jquery/jquery.min.js"></script>
